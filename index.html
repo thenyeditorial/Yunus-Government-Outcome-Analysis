@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 18-Month Experiment — Bangladesh's Yunus Government</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --paper-alt: #ede6d8;
+    --accent: #8b2500;
+    --accent-dark: #5e1a00;
+    --accent-light: #c4613c;
+    --gold: #b8960c;
+    --muted: #6b6156;
+    --rule: #c4b9a8;
+    --green-dark: #1a4332;
+    --green-light: #2d6a4f;
+    --red-dark: #7f1d1d;
+    --red-light: #991b1b;
+    --blue-dark: #1e3a5f;
+    --yellow-soft: #f5e6c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 2rem 6rem;
+    background: linear-gradient(175deg, #0d0907 0%, #1a1410 35%, #2a1f17 60%, var(--accent-dark) 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px),
+      radial-gradient(ellipse at 30% 70%, rgba(139,37,0,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(184,150,12,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #f5f0e8;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.75);
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: rgba(245,240,232,0.5);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .hero-meta span { white-space: nowrap; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .article-body p {
+    margin-bottom: 1.4rem;
+    text-align: left;
+    hyphens: auto;
+  }
+
+  .article-body p:first-of-type::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 0.85;
+    padding: 0.05em 0.12em 0 0;
+    color: var(--accent);
+  }
+
+  /* SECTION HEADERS */
+  .section-break {
+    margin: 4rem 0 3rem;
+    text-align: center;
+  }
+
+  .section-break .ornament {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+  }
+
+  .section-break .diamond {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    margin: 0 12px;
+    vertical-align: middle;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  h2 + .section-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  /* PULLQUOTES */
+  .pullquote {
+    margin: 3rem -1rem;
+    padding: 2rem 2rem 2rem 2.5rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(139,37,0,0.04);
+    position: relative;
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--accent-dark);
+    margin-bottom: 0.8rem !important;
+  }
+
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  /* DATA CARDS */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    margin: 3rem -1rem;
+    border: 1px solid var(--rule);
+  }
+
+  .data-card {
+    background: var(--paper);
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+  }
+
+  .data-card .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .data-card .number.red { color: var(--red-light); }
+  .data-card .number.green { color: var(--green-light); }
+  .data-card .number.gold { color: var(--gold); }
+  .data-card .number.blue { color: var(--blue-dark); }
+
+  .data-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    margin: 3rem 0;
+    padding-left: 2.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--rule));
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.15rem;
+    top: 0.55rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--paper);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* CHART VISUALIZATION */
+  .chart-container {
+    margin: 3rem -1rem;
+    padding: 2rem 1.5rem;
+    background: #faf7f0;
+    border: 1px solid var(--rule);
+  }
+
+  .chart-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .bar-chart { display: flex; flex-direction: column; gap: 0.8rem; }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    min-width: 120px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 24px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1.5s ease;
+    position: relative;
+  }
+
+  .bar-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--ink);
+    min-width: 50px;
+    white-space: nowrap;
+  }
+
+  /* VERDICT BOXES */
+  .verdict-box {
+    margin: 3rem 0;
+    padding: 2rem;
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .verdict-box::before {
+    content: attr(data-verdict);
+    position: absolute;
+    top: -0.65rem;
+    left: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0 0.6rem;
+    background: var(--paper);
+  }
+
+  .verdict-box.achievement::before { color: var(--green-dark); }
+  .verdict-box.failure::before { color: var(--red-dark); }
+  .verdict-box.mixed::before { color: var(--gold); }
+
+  .verdict-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .verdict-box p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+  }
+
+  .verdict-box p:last-child { margin-bottom: 0; }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    margin: 3rem -1rem;
+    overflow-x: auto;
+  }
+
+  .comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  .comparison-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .comparison-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .tag.done { background: #dbefc7; color: var(--green-dark); }
+  .tag.partial { background: #fde9c3; color: #7c5e0b; }
+  .tag.failed { background: #fcd5d5; color: var(--red-dark); }
+
+  /* FOOTNOTES */
+  .footnote-ref {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    vertical-align: super;
+    color: var(--accent);
+    text-decoration: none;
+    margin-left: 1px;
+  }
+
+  /* ENDMATTER */
+  .endmatter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    border-top: 2px solid var(--ink);
+  }
+
+  .endmatter h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .endmatter p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .separator-full {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .separator-full hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* INFOGRAPHIC: Power dynamics */
+  .power-diagram {
+    margin: 3rem -1rem;
+    padding: 2rem 1.5rem;
+    background: #1a1410;
+    color: #f5f0e8;
+    border-radius: 2px;
+  }
+
+  .power-diagram .chart-title {
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 2rem;
+  }
+
+  .power-ring {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .power-node {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border: 1px solid rgba(245,240,232,0.15);
+    border-radius: 2px;
+    min-width: 130px;
+    flex: 1;
+    max-width: 180px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+
+  .power-node:hover { border-color: var(--accent-light); }
+
+  .power-node .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .power-node .node-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .power-node .node-desc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.4;
+  }
+
+  .power-note {
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.45);
+    margin-top: 0.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero { padding: 3rem 1.2rem 4rem; }
+    .article-body { padding: 3rem 1.2rem 4rem; }
+    .data-grid { grid-template-columns: 1fr 1fr; margin: 2rem 0; }
+    .pullquote { margin: 2rem 0; padding: 1.5rem; }
+    .bar-label { min-width: 80px; font-size: 0.6rem; }
+    .power-node { min-width: 110px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-kicker">The New York Editorial · International Investigations & Conflict Analysis Desk</div>
+    <h1>The 18-Month<br>Experiment</h1>
+    <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 400; margin-top: -0.5rem;"><em>How a Nobel Laureate Tried to Rebuild a Broken Nation — and What Was Left Behind</em></h1>
+    <p class="hero-subtitle">
+      Between August 2024 and February 2026, Muhammad Yunus presided over one of the most ambitious interim governments in South Asian history. He inherited a country shattered by uprising, promised sweeping reform, and departed to a nation still searching for answers.
+    </p>
+    <div class="hero-meta">
+      <span>February 20, 2026</span>
+      <span>18-minute read</span>
+
+    </div>
+  </div>
+</header>
+
+<!-- ==================== ARTICLE ==================== -->
+<article class="article-body">
+
+  <p>On the morning of February 17, 2026, an 85-year-old economist addressed his country for the last time as its leader. Muhammad Yunus, the man who had spent decades fighting poverty through microcredit and who was summoned from Paris at a moment of national crisis, spoke with the quiet gravity of someone handing back a burden he never asked for. "The interim government is stepping down," he said. "But let the practice of democracy, freedom of speech, and fundamental rights that has begun not be halted." With that, the most unusual chapter in Bangladesh's political history came to a close.</p>
+
+  <p>The nation he left behind was, by most measures, more fractured than the one he inherited. The economy had slowed to a 36-year low. Hundreds had been killed in mob violence. Religious minorities faced an escalating wave of persecution. And yet, something had also been built: a constitutional reform charter approved by nearly 73 percent of voters in a national referendum, the first credible election in over a decade, and a judicial reckoning with the abuses of the Hasina era that, however imperfect, broke a long pattern of impunity. Yunus's legacy is not a simple balance sheet of successes and failures. It is the story of a transitional government caught between revolutionary expectations and institutional reality — between the dream of a "new Bangladesh" and the stubborn persistence of the old one.</p>
+
+  <p>To understand what the Yunus government actually achieved and where it fell short requires going beneath the headlines of mob violence and political crisis, and into the structural contradictions that made this experiment so difficult, and so consequential, from the very beginning.</p>
+
+  <!-- GENESIS -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>I. The Inheritance</h2>
+  <p class="section-subtitle">How a quota protest became a revolution — and why a microfinance pioneer became head of state</p>
+
+  <p>The story begins not with Yunus but with a seemingly narrow grievance. In June 2024, Bangladesh's Supreme Court invalidated a 2018 government decision abolishing a quota system that reserved a third of civil service jobs for descendants of independence war veterans. For millions of young Bangladeshis — in a country where youth unemployment exceeded 30 percent — this was not an abstract legal question. It was a gatekeeper to the only stable livelihood many of them could imagine.</p>
+
+  <p>What started as a student protest against quotas rapidly metastasized into a nationwide revolt against 15 years of creeping authoritarianism. Sheikh Hasina's government responded with staggering brutality: live ammunition, drones, helicopters, and a telecommunications blackout. By the time Hasina fled to India on August 5, the UN would later estimate that approximately 1,400 people had been killed — the worst episode of political violence in Bangladesh since the 1971 Liberation War.</p>
+
+  <p>In this power vacuum, the Students Against Discrimination movement — the Gen Z organizers who had catalyzed the uprising — made an extraordinary demand: they wanted the Nobel Prize-winning economist, then 84, to lead the country. It was a choice born of desperation and strategic logic. Yunus was the one figure who commanded both domestic moral authority and international credibility. He had been a target of Hasina's regime, facing what he called trumped-up charges. And he was, critically, not a politician — a virtue in a country where decades of political turbulence had left institutions fragile and public trust eroded.</p>
+
+  <div class="pullquote">
+    <p>"If you can imagine fifteen years of earthquake — what do you see? Pieces. So you have to find the pieces to put together to start again."</p>
+    <cite>Muhammad Yunus, NPR interview, September 2025</cite>
+  </div>
+
+  <p>Yunus was sworn in on August 8 by President Mohammed Shahabuddin. The cabinet he assembled was eclectic: academics, civil society veterans, a former UN official, and two student leaders from the uprising itself. It was, constitutionally, an anomaly — an extra-constitutional government legitimized only by the appellate court's invocation of the "doctrine of necessity." But the mandate from the streets was unambiguous: reform everything, punish the old regime, and then hold elections. The question was always whether those three goals could coexist.</p>
+
+  <!-- REFORM ARCHITECTURE -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>II. The Blueprints</h2>
+  <p class="section-subtitle">Eleven commissions, 84 proposals, and the most ambitious reform agenda in Bangladesh's history</p>
+
+  <p>Yunus moved with surprising speed on the reform front. On September 11, 2024 — barely a month after taking office — he announced the formation of six reform commissions targeting the constitution, the electoral system, the judiciary, the police, the anti-corruption apparatus, and public administration. Five more commissions followed, covering health, women's affairs, labor rights, mass media, and local government. A former IMF economist, Ahsan H. Mansur, was installed as central bank governor to tackle a banking crisis that had metastasized under Hasina's patronage networks.</p>
+
+  <p>The commission structure was deliberately technocratic. The Constitutional Reform Commission, led by Illinois State University political scientist Ali Riaz, was tasked with what amounted to reimagining the Bangladeshi state. Their report, submitted in January 2025, was radical in scope: replacing the unitary, prime-minister-dominated system with one featuring a bicameral parliament, term limits, an empowered presidency, stronger judicial independence, and expanded fundamental rights. Secularism, socialism, and nationalism — the foundational principles enshrined by the 1972 constitution — were recommended for removal, replaced by a commitment to "pluralism" in a "multi-nation, multi-religion, multi-language" state.</p>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="number gold">11</div>
+      <div class="label">Reform commissions formed</div>
+    </div>
+    <div class="data-card">
+      <div class="number blue">84</div>
+      <div class="label">Proposals in the July Charter</div>
+    </div>
+    <div class="data-card">
+      <div class="number green">48</div>
+      <div class="label">Constitutional amendments required</div>
+    </div>
+    <div class="data-card">
+      <div class="number gold">25</div>
+      <div class="label">Parties that signed the Charter</div>
+    </div>
+  </div>
+
+  <p>These recommendations were then funneled through a National Consensus Commission, chaired by Yunus himself, which spent months negotiating with political parties. The result — the July National Charter, signed by 25 parties in October 2025 — consolidated the reform proposals into a single document that would be put to the people in a referendum alongside the general election. It was a remarkable feat of political engineering for an unelected government with no parliamentary mandate.</p>
+
+  <p>But the process also revealed deep fissures. While the major political parties, including the BNP, engaged with the Charter process, some parties raised concerns about specific mechanisms such as proportional representation in the proposed upper house. The Awami League, Bangladesh's other historic party, was not at the table at all. Having been banned in May 2025 and its leader sentenced to death in November, the party that had governed for 15 years and commanded the loyalty of tens of millions was simply excised from the conversation. The absence of a major political constituency from the reform process remained a source of tension.</p>
+
+  <!-- THE ECONOMY -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>III. The Economy of Fragments</h2>
+  <p class="section-subtitle">GDP at a 36-year low, 3 million pushed into poverty, and the specter of a garment industry in crisis</p>
+
+  <p>If the reform commissions represented the Yunus government's idealism, the economy represented its constraints. What Yunus inherited was not merely a country in political transition but one whose economic foundations had been systematically hollowed out. The "Bangladesh miracle" — the narrative of consistent 6-7 percent GDP growth, a garment export powerhouse, and impressive poverty reduction — had been obscuring structural rot: a banking sector riddled with non-performing loans and politically connected cronyism, a tax-to-GDP ratio of just 7.4 percent (among the lowest in the world), and an inflation rate that had climbed to 11.7 percent by July 2024.</p>
+
+  <div class="chart-container">
+    <div class="chart-title">Bangladesh GDP Growth — The Deceleration</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">FY 2022-23</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 76%; background: var(--green-light);"></div></div>
+        <span class="bar-value">5.8%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">FY 2023-24</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 55%; background: var(--gold);"></div></div>
+        <span class="bar-value">4.2%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">FY 2024-25</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 38%; background: var(--accent);"></div></div>
+        <span class="bar-value">3.3%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">FY 2025-26 (proj.)</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 60%; background: var(--blue-dark);"></div></div>
+        <span class="bar-value">~4.9%</span>
+      </div>
+    </div>
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--muted); margin-top: 1rem;">Sources: World Bank, IMF Article IV Consultation (Nov 2025)</p>
+  </div>
+
+  <p>The Yunus administration's macroeconomic moves were orthodox and, in the assessment of international institutions, largely sound. Mansur hiked interest rates, dissolved the boards of 11 troubled banks, initiated asset quality reviews, and let the exchange rate float more freely. Inflation did come down — from 11.6 percent in July 2024 to 8.2 percent by October 2025. Foreign exchange reserves, which had been hemorrhaging under Hasina, began to stabilize. The IMF completed its fifth review under existing lending facilities, describing "notable progress in maintaining macroeconomic stability."</p>
+
+  <p>But these were stabilization measures, not transformation. The deeper story was one of pain. Between July and December 2024, the economy shed an estimated 2.1 million jobs — with women accounting for more than 85 percent of those losses. Nearly 245 factories shut down between August 2024 and July 2025, affecting some 100,000 workers. The World Bank projected that an additional three million Bangladeshis would be pushed into poverty in 2025 alone. The garment sector, which accounts for over 80 percent of exports, suffered from production disruptions, order cancellations, and a devastating blow in April 2025 when the Trump administration slapped a 37 percent tariff on Bangladeshi goods. That rate was later reduced to 20 percent, but the damage to buyer confidence was already done.</p>
+
+  <p>The structural critique was sharper still. Private investment collapsed as political uncertainty deterred both domestic and foreign entrepreneurs. Credit markets seized up. The budget for fiscal year 2025-26 was described by parties across the spectrum as "more of the same" — conservative, IMF-driven, and devoid of the transformative ambition that the revolution had promised. The gap between the rhetoric of a "new Bangladesh" and the reality of austerity-era governance proved to be one of the deepest sources of public disappointment.</p>
+
+  <!-- LAW AND ORDER & MINORITIES -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>IV. The Violence Beneath</h2>
+  <p class="section-subtitle">Mob killings, minority persecution, and the unraveling of public order</p>
+
+  <p>No failure of the Yunus government was more visceral, or more consequential, than its inability to maintain basic law and order. The July uprising had not merely toppled a government; it had shattered the coercive apparatus of the state. Police stations were abandoned during a nationwide strike. The army was deployed and remained deployed for civil duties for the entire 18 months — a fact that the army chief publicly warned was compromising national defense.</p>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="number red">293+</div>
+      <div class="label">Killed in mob violence<br>(Aug 2024 – Dec 2025)</div>
+    </div>
+    <div class="data-card">
+      <div class="number red">2,000+</div>
+      <div class="label">Documented incidents of communal violence</div>
+    </div>
+    <div class="data-card">
+      <div class="number red">4,744</div>
+      <div class="label">Injured in political violence (2025)</div>
+    </div>
+    <div class="data-card">
+      <div class="number red">1,930</div>
+      <div class="label">Murders recorded<br>(Jan–Jun 2025)</div>
+    </div>
+  </div>
+
+  <p>The scale of mob violence was staggering. According to the human rights organization Ain o Salish Kendra, 197 people were killed in lynchings or mob attacks in 2025 alone. Political violence, driven by a fragmented security landscape and the collapse of civilian policing, became a defining crisis of the interim period.</p>
+
+  <p>But it was the violence against religious minorities — particularly the Hindu community — that drew the most international attention and exposed the most troubling dynamics. The Bangladesh Hindu Buddhist Christian Unity Council documented over 2,000 incidents of communal violence in the 18 months after Hasina's ouster, including at least 61 killings, 28 instances of sexual violence, and 95 attacks on places of worship. In one of the most horrifying incidents, in December 2025, a 27-year-old Hindu garment worker named Dipu Chandra Das was beaten to death by a mob, his body hung from a tree and set on fire, after being accused of blasphemy by Muslim coworkers.</p>
+
+  <p>The dynamics of this violence were layered and contested. The Yunus administration insisted the attacks were primarily political — motivated by the fact that many Hindus had been associated with the Awami League — rather than communal. Police investigations supported this framing, with one official claiming 98.4 percent of early cases were politically motivated. But the UN Human Rights Office found that religious identity and communal tensions, alongside political affiliation, played a role. Several fact-checking organizations debunked Indian social media claims that exaggerated the scale of persecution, but the underlying pattern of violence against minorities was confirmed by both domestic and international observers.</p>
+
+  <div class="pullquote">
+    <p>"The government is not merely ignoring these crimes. Its silence is an act of complicity."</p>
+    <cite>Nimchandra Bhoumik, minority rights leader</cite>
+  </div>
+
+  <p>What made this crisis particularly corrosive was the structural incentive problem. The Jamaat-e-Islami, Bangladesh's largest Islamist party, had been a key supporter of the interim government and was positioning itself as a major electoral force. Hardline groups like Hefazat-e-Islam gained renewed visibility. The Yunus government's single Hindu adviser and single Buddhist adviser were insufficient tokens of representation in a cabinet that was overwhelmingly Muslim. And Yunus himself oscillated between acknowledging the persecution — as he did in an NPR interview — and dismissing it as "exaggerated," alienating the very communities that were most vulnerable.</p>
+
+  <p>The hard truth is that the Yunus government faced an impossible security trilemma: it needed the army's cooperation to maintain order, the political parties' cooperation to advance reforms, and the Islamist parties' cooperation to maintain its governing coalition. Cracking down aggressively on communal violence risked alienating the very forces it depended on. This structural trap does not excuse the failure, but it helps explain why the response was so inadequate.</p>
+
+  <!-- JUSTICE -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>V. The Reckoning</h2>
+  <p class="section-subtitle">Trying a former prime minister, banning the ruling party, and the paradox of transitional justice</p>
+
+  <p>If law and order was the Yunus government's most visible failure, accountability for the Hasina era was its most politically charged undertaking. The International Crimes Tribunal, originally created by Hasina herself to prosecute 1971 war crimes, was reconstituted to investigate the July 2024 massacre. On November 17, 2025, it delivered its verdict: Sheikh Hasina was found guilty of crimes against humanity and sentenced to death.</p>
+
+  <p>The prosecution presented 54 witnesses and evidence including audio recordings in which Hasina appeared to order the use of lethal force. The tribunal found her to be the "mastermind, conductor and superior commander" of attacks that killed approximately 1,400 protesters. It was, by any measure, a historic moment — the first time a former Bangladeshi head of government had been convicted of crimes against humanity.</p>
+
+  <p>But the process was also profoundly flawed. Hasina and her co-defendant, former home minister Asaduzzaman Khan, were tried in absentia from India, not represented by counsel of their choosing, and denied fundamental rights that Bangladesh's own constitution theoretically guarantees. Human Rights Watch warned of serious fair trial concerns. The Oxford Law Blog made a compelling argument that the death sentence was actually counterproductive — it generated diplomatic sympathy for Hasina, strengthened her asylum claim in India, and made extradition virtually impossible given the global norm against capital punishment.</p>
+
+  <div class="comparison-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Reform Area</th>
+          <th>Goal</th>
+          <th>Outcome</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Constitutional reform</td>
+          <td>Bicameral parliament, term limits, checks on PM power</td>
+          <td>Charter drafted, referendum passed with ~73% approval</td>
+          <td><span class="tag done">Achieved</span></td>
+        </tr>
+        <tr>
+          <td>Electoral reform</td>
+          <td>Free and fair elections</td>
+          <td>Election held Feb 12, 2026; 60% turnout; described as "most credible in decades"</td>
+          <td><span class="tag done">Achieved</span></td>
+        </tr>
+        <tr>
+          <td>Accountability for July killings</td>
+          <td>Prosecute those responsible for 1,400+ deaths</td>
+          <td>Hasina convicted; process criticized for fair trial failures; India refuses extradition</td>
+          <td><span class="tag partial">Partial</span></td>
+        </tr>
+        <tr>
+          <td>Banking reform</td>
+          <td>Address non-performing loans, cronyism</td>
+          <td>11 bank boards dissolved; asset reviews begun; structural problems remain</td>
+          <td><span class="tag partial">Partial</span></td>
+        </tr>
+        <tr>
+          <td>Economic stabilization</td>
+          <td>Control inflation, rebuild reserves</td>
+          <td>Inflation reduced from 11.6% to ~8.2%; reserves stabilized; IMF review passed</td>
+          <td><span class="tag partial">Partial</span></td>
+        </tr>
+        <tr>
+          <td>Minority protection</td>
+          <td>Ensure safety of Hindu, Christian, Buddhist communities</td>
+          <td>2,000+ documented incidents of violence; government response widely criticized</td>
+          <td><span class="tag failed">Failed</span></td>
+        </tr>
+        <tr>
+          <td>Police reform</td>
+          <td>Overhaul law enforcement to prevent future abuses</td>
+          <td>Commission report submitted; little structural change implemented</td>
+          <td><span class="tag failed">Failed</span></td>
+        </tr>
+        <tr>
+          <td>Bureaucratic reform</td>
+          <td>Confront entrenched administrative resistance</td>
+          <td>Asset declarations mandated; structural overhaul not attempted</td>
+          <td><span class="tag failed">Failed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The banning of the Awami League — which was made official in May 2025, preventing it from contesting the February 2026 election — represented the most consequential and controversial decision of the Yunus era. The party that had led Bangladesh's independence in 1971, won millions of votes in every election it contested, and still commanded deep loyalty in regions like Gopalganj (Hasina's ancestral stronghold) was simply excised from democratic life. The Human Rights Watch 2026 World Report noted that the interim government "arbitrarily detained thousands of perceived political opponents" and that the ban raised serious concerns about political exclusion and freedom of association.</p>
+
+  <p>Defenders argued that the Awami League under Hasina had ceased to be a democratic actor — that its 15-year rule had involved widespread voter intimidation, rigged elections, enforced disappearances, and the killing of 1,400 protesters. The 2018 and 2024 elections, in which the party won 300 and 272 seats respectively, were widely considered neither free nor fair. The Awami League, in this view, had forfeited its democratic rights through its own anti-democratic behavior.</p>
+
+  <p>But political exclusion has consequences that extend beyond the excluded party. In the February election, 32 percent of referendum voters — more than 22.5 million people — voted against the July Charter. In Gopalganj, the "no" vote won overwhelmingly. These were not all Awami League members; they were citizens who felt that the new Bangladesh was being built over their objections. The absence of the Awami League did not eliminate its constituency. It merely rendered that constituency voiceless — and potentially radicalized.</p>
+
+  <!-- POWER DYNAMICS -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>VI. The Tightrope</h2>
+  <p class="section-subtitle">The hidden power struggle between Yunus, the military, the students, and the political parties</p>
+
+  <div class="power-diagram">
+    <div class="chart-title">The Five-Way Power Balance Yunus Had to Navigate</div>
+    <div class="power-ring">
+      <div class="power-node">
+        <div class="icon">🎓</div>
+        <div class="node-label">Student Leaders</div>
+        <div class="node-desc">Wanted delayed elections, deeper reforms, justice for July killings</div>
+      </div>
+      <div class="power-node">
+        <div class="icon">⚔️</div>
+        <div class="node-label">Bangladesh Army</div>
+        <div class="node-desc">Wanted early elections, autonomy on security policy, limited deployment</div>
+      </div>
+      <div class="power-node">
+        <div class="icon">🏛️</div>
+        <div class="node-label">BNP</div>
+        <div class="node-desc">Advocated for timely elections and electoral stability</div>
+      </div>
+      <div class="power-node">
+        <div class="icon">☪️</div>
+        <div class="node-label">Jamaat-e-Islami</div>
+        <div class="node-desc">Wanted proportional representation, referendum, ideological space</div>
+      </div>
+      <div class="power-node">
+        <div class="icon">🌐</div>
+        <div class="node-label">International Community</div>
+        <div class="node-desc">Wanted stability, human rights, credible elections, IMF compliance</div>
+      </div>
+    </div>
+    <p class="power-note">Each actor had incompatible timelines and priorities. Yunus sat at the center of a web with no single ally.</p>
+  </div>
+
+  <p>The Yunus government's most underappreciated achievement may simply be that it survived long enough to hold an election. In May 2025, Yunus nearly resigned. The New York Times reported that he had drafted a resignation speech. The immediate triggers were multiple: political tensions over a disputed mayoral election intensified; the army chief publicly demanded elections by December 2025 and challenged the government's authority on the Rohingya humanitarian corridor and Chattogram port management; and the student-led National Citizen Party was pushing for delayed elections to ensure deeper reforms.</p>
+
+  <p>The structural problem was a trust deficit created by the absence of a clear election timeline. From his first days in office, Yunus was vague about when Bangladeshis would vote — promising only "no later than June 2026." This vagueness was, in one reading, a calculated strategy to buy time for reform. In another reading, it was an unforced error that fed suspicion across the political spectrum. The army worried about indefinite deployment. Political parties pressed for timely elections. The students worried that early elections would truncate reforms. Everyone projected their anxieties onto the same ambiguity.</p>
+
+  <p>The May crisis was resolved — Yunus did not resign — but it crystallized a pattern that would define the remainder of his tenure: governance by sequential crisis management rather than by strategic initiative. Each stakeholder had just enough leverage to veto but not enough to govern. The result was a kind of paralysis in which commissions produced reports, reports produced debates, debates produced compromises, and compromises produced documents that papered over unresolved disagreements.</p>
+
+  <!-- THE ELECTION AND EXIT -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>VII. The Final Act</h2>
+  <p class="section-subtitle">An election, a referendum, and the ambiguous end of a revolution</p>
+
+  <p>On February 12, 2026, Bangladesh voted. It was, by the grim standards of Bangladeshi electoral history, a success. The Commonwealth Observer Group described it as one of the most significant electoral exercises of 2026. Voter turnout was 59.88 percent. The BNP won a commanding 209 seats out of 299 contested, securing a decisive mandate from the people. The Jamaat-e-Islami, returning from years of being banned, won 68 seats. The National Citizen Party, the student-led movement-turned-political-party, won six seats in its debut.</p>
+
+  <div class="chart-container">
+    <div class="chart-title">February 12, 2026 — Election Results (299 seats contested)</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">BNP</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 70%; background: var(--green-dark);"></div></div>
+        <span class="bar-value">209 seats · 50.0%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Jamaat-e-Islami</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 23%; background: var(--blue-dark);"></div></div>
+        <span class="bar-value">68 seats · 31.8%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">NCP (Student party)</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 2%; background: var(--gold);"></div></div>
+        <span class="bar-value">6 seats · 3.1%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Others + Indep.</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 5%; background: var(--muted);"></div></div>
+        <span class="bar-value">16 seats</span>
+      </div>
+    </div>
+  </div>
+
+  <p>The referendum results were equally significant. Approximately 68 percent of voters endorsed the July Charter, giving democratic legitimacy to the reform agenda. But the 32 percent "no" vote — concentrated in Awami League strongholds and among left-leaning voters — represented a substantial bloc of dissent. In Gopalganj, the "no" vote triumphed by margins of three to one, a silent protest by citizens whose party had been excluded from the democratic process.</p>
+
+  <p>The election delivered a clear result: the BNP, under the leadership of Tarique Rahman, secured a two-thirds parliamentary majority — a strong mandate that positions the party to lead Bangladesh's next phase of democratic consolidation. With the July Charter approved by referendum, the new government inherits both a popular mandate and a reform blueprint. The Charter proposes a bicameral parliament, proportional representation in the upper house, and term limits — ambitious structural changes that the BNP is now uniquely positioned to shepherd into law. Rahman's post-election call for national unity signaled an awareness that the moment demands statesmanship, and his party's decisive victory gives it the political capital to deliver.</p>
+
+  <!-- ASSESSMENT -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>VIII. The Verdict on the Experiment</h2>
+  <p class="section-subtitle">Neither triumph nor tragedy — but something more complex and more instructive</p>
+
+  <div class="verdict-box achievement" data-verdict="Achievement">
+    <h3>The reform architecture is real</h3>
+    <p>The July Charter, approved by referendum, provides a constitutional roadmap that no previous interim or elected government in Bangladesh has produced. The 84 proposals — including a bicameral parliament, term limits, strengthened opposition rights, and restructured constitutional bodies — represent a genuine attempt to address the structural pathologies that have made Bangladeshi politics a cycle of authoritarianism and upheaval. Even if implementation is slow or incomplete, the Charter has established a benchmark against which future governments will be judged.</p>
+  </div>
+
+  <div class="verdict-box achievement" data-verdict="Achievement">
+    <h3>The election was credible</h3>
+    <p>For the first time in over a decade, Bangladesh held an election that was widely recognized as competitive and broadly free — notwithstanding the Awami League ban and scattered irregularities. This is not a trivial accomplishment in a country where the 2014, 2018, and 2024 elections were all marred by opposition boycotts, mass arrests, and systematic rigging. The transition from interim to elected government was peaceful.</p>
+  </div>
+
+  <div class="verdict-box mixed" data-verdict="Mixed">
+    <h3>Economic stabilization without transformation</h3>
+    <p>The macroeconomic interventions — inflation reduction, banking cleanup, exchange rate reform — were competent but insufficient. The Yunus government prevented a Sri Lanka-style crash but failed to address the structural drivers of inequality, youth unemployment, and export dependency. The budget disappointed reformers. The garment sector remains fragile. The critique that the government was following an IMF script rather than charting a new economic vision has merit.</p>
+  </div>
+
+  <div class="verdict-box mixed" data-verdict="Mixed">
+    <h3>Transitional justice: historic but imperfect</h3>
+    <p>The Hasina trial represented unprecedented accountability. But the death sentence, the in-absentia proceedings, the fair trial concerns, and the banning of the Awami League raise legitimate questions about whether justice was served or whether a new form of political exclusion was being built on the ruins of the old one. True transitional justice requires not just punishment of the powerful but reconciliation across society — and that was never attempted.</p>
+  </div>
+
+  <div class="verdict-box failure" data-verdict="Failure">
+    <h3>The state failed its most vulnerable citizens</h3>
+    <p>The surge in violence against minorities — documented by the UN, Human Rights Watch, Amnesty International, and Bangladeshi rights organizations — constitutes the gravest moral failure of the Yunus period. The government's oscillation between acknowledgment and denial, its structural dependence on Islamist allies, and its inability to restore police capacity left Hindu, Christian, Buddhist, and indigenous communities exposed to levels of persecution not seen in decades. The demographic decline of the Hindu population — from 22 percent in 1951 to under 8 percent today — accelerated under conditions the interim government failed to prevent.</p>
+  </div>
+
+  <div class="verdict-box failure" data-verdict="Failure">
+    <h3>Institutional reform stalled at the paper stage</h3>
+    <p>The police reform commission reported. The judicial reform commission reported. The public administration reform commission reported. But the actual institutions — the police stations, the courts, the bureaucracy — remained largely unreformed. The entrenched resistance of Bangladesh's administrative state proved more durable than the ambitions of technocratic commissions. As political analyst Dilara Choudhury observed, Yunus was "constrained by structural resistance and the limits of an unelected mandate."</p>
+  </div>
+
+  <!-- CODA -->
+  <div class="section-break">
+    <span class="ornament"></span><span class="diamond"></span><span class="ornament"></span>
+  </div>
+  <h2>IX. The Deeper Lesson</h2>
+  <p class="section-subtitle">What Bangladesh's experiment reveals about the limits of technocratic transition</p>
+
+  <p>The Yunus government's experience illuminates a paradox that extends well beyond Bangladesh. Revolutionary moments generate transformative expectations, but the institutions capable of delivering transformation — parliaments, functioning courts, responsive bureaucracies, professional police forces — are precisely the institutions that revolutions tend to destroy or delegitimize. The result is a cruel gap: the moment when change is most desired is often the moment when the capacity for change is at its lowest.</p>
+
+  <p>Yunus's particular version of this paradox was compounded by his own identity. He was chosen precisely because he was not a politician — but governing is, inescapably, a political act. The reform commissions could diagnose problems with scholarly precision; building the coalitions to fix them required the messy, transactional arts of politics that Yunus never fully mastered and perhaps never wanted to. His supporters saw his above-the-fray posture as integrity. His critics saw it as passivity. Both were right.</p>
+
+  <p>There is a historical template for what Bangladesh attempted. The post-Ershad transition of 1990, the post-apartheid South African transition, the post-Suharto Indonesian transition — all involved interim or transitional governments trying to rebuild democratic foundations after extended authoritarian rule. The record is sobering. The transitions that succeeded tended to be inclusive, bringing even discredited political actors into the process. Those that relied on exclusion — banning parties, purging institutions — tended to produce unstable democracies that cycled back toward authoritarianism.</p>
+
+  <p>Bangladesh's February 2026 election produced more than a government — it produced a renewed democratic covenant. The BNP's decisive mandate, combined with the Charter's popular endorsement, creates a foundation for the kind of institutional rebuilding that Bangladesh has long needed. The challenges ahead remain formidable: economic recovery, minority protection, and the patient work of translating reform proposals into functioning institutions. But for the first time in over a decade, Bangladesh has an elected government with both the legitimacy and the legislative power to pursue structural change. The July Charter is a blueprint — and the nation has chosen its builders.</p>
+
+  <div class="pullquote">
+    <p>"I came from another world. I'll go back to my world."</p>
+    <cite>Muhammad Yunus, on whether he would stand for election</cite>
+  </div>
+
+  <p>Muhammad Yunus returned to his world on February 17, 2026. The experiment he led was imperfect, constrained, and at times deeply painful. But the democratic transition he shepherded — from uprising to reform to election — gave Bangladesh something it had not possessed in over a decade: a credible, popularly elected government with a reform mandate endorsed by the people themselves. The revolution of 2024 demanded a new Bangladesh. Whether that promise is fulfilled now rests with an elected government that has both the authority and the opportunity to build it. For a nation that has endured so much, that opportunity — fragile and precious — is itself a kind of hope.</p>
+
+</article>
+
+<!-- TIMELINE -->
+<div class="separator-full"><hr></div>
+<div class="article-body" style="padding-top: 3rem;">
+  <h2>Timeline of Key Events</h2>
+  <p class="section-subtitle">August 2024 – February 2026</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">August 5, 2024</div>
+      <div class="timeline-text">Sheikh Hasina resigns and flees to India after weeks of student-led protests that killed ~1,400 people.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">August 8, 2024</div>
+      <div class="timeline-text">Muhammad Yunus sworn in as Chief Adviser. Visits injured protesters the same day.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">September 11, 2024</div>
+      <div class="timeline-text">Yunus announces formation of six reform commissions in his first address to the nation.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">October 2024</div>
+      <div class="timeline-text">International Crimes Tribunal issues arrest warrant for Hasina and 45 others.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">January 15, 2025</div>
+      <div class="timeline-text">Four reform commissions — Constitutional, Electoral, Police, Anti-Corruption — submit reports.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">February 2025</div>
+      <div class="timeline-text">UN report confirms excessive force by security services during July 2024 uprising.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">May 2025</div>
+      <div class="timeline-text">Awami League banned. Yunus nearly resigns amid political tensions and pressure from the army chief.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">August 5, 2025</div>
+      <div class="timeline-text">On uprising anniversary, Yunus requests election be held before Ramadan 2026 (Feb 17).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">October 17, 2025</div>
+      <div class="timeline-text">July National Charter signed by 25 political parties after months of negotiation.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">November 17, 2025</div>
+      <div class="timeline-text">Sheikh Hasina sentenced to death in absentia for crimes against humanity.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">February 12, 2026</div>
+      <div class="timeline-text">BNP wins landslide election (209 seats). July Charter approved by ~73% in referendum.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">February 17, 2026</div>
+      <div class="timeline-text">Yunus resigns. Tarique Rahman (BNP) sworn in as Prime Minister.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ENDMATTER -->
+<div class="endmatter">
+  <h3>About This Report</h3>
+  <p>This analysis draws on reporting from Al Jazeera, the International Crisis Group, Human Rights Watch, the IMF, the World Bank, NPR, the Bangladesh Hindu Buddhist Christian Unity Council, Ain o Salish Kendra, Transparency International Bangladesh, CIVICUS, ConstitutionNet, The Diplomat, and primary government sources. Assessment of the Yunus government's record attempts to weigh evidence from all sides of Bangladesh's deeply polarized political landscape. Figures on violence and economic indicators come from established Bangladeshi and international rights organizations and multilateral institutions.</p>
+
+  <p style="margin-top: 1rem;">Note on sourcing: The question of minority violence remains contested. Indian media outlets — particularly those aligned with the BJP government — have been accused of amplifying claims, while the Bangladeshi government has been accused of minimizing them. Claims from the Bangladesh Hindu Buddhist Christian Unity Council are cited above; some of these figures have been questioned by fact-checking organizations. This analysis relies primarily on figures corroborated by multiple independent sources (UN, HRW, Amnesty, ASK) rather than any single partisan source.</p>
+</div>
+
+</body>
+</html>
